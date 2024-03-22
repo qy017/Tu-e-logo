@@ -15,25 +15,45 @@ if __name__ == "__main__":
     cf4 = swarm.allcfs.crazyflies[3]
     cf5 = swarm.allcfs.crazyflies[4]
     
-    allcfs.takeoff(targetHeight=Z, duration=2.0)
-    
-    cf1.goTo(np.array([-0.5,0,1.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf2.goTo(np.array([0,0,1.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf3.goTo(np.array([0,0,1]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf4.goTo(np.array([0,0,0.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf5.goTo(np.array([0.5,0,1.5]),0,2.0)
-    timeHelper.sleep(2.0)
+    allcfs.takeoff(targetHeight=0.1, duration=2.0)
+    timeHelper.sleep(3.0)
+
+    in1 = cf1.position()
+    in2 = cf2.position()
+    in3 = cf3.position()
+    in4 = cf4.position()
+    in5 = cf5.position()
+
+    cf1.goTo(np.array([-0.5,0,1.5]),0,5.0)
+    timeHelper.sleep(3.0)
+    cf2.goTo(np.array([0,0,1.5]),0,5.0)
+    timeHelper.sleep(3.0)
+    cf3.goTo(np.array([0.5,0,1.5]),0,5.0)
+    timeHelper.sleep(3.0)
+    cf4.goTo(np.array([0,0,1]),0,5.0)
+    timeHelper.sleep(3.0)
+    cf5.goTo(np.array([0,0,0.5]),0,5.0)
 
     #pos = np.array(cf.initialPosition) + np.array([0, 0, Z])
     #cf.goTo(pos, 0, 1.0)
     print("press button to continue...")
     swarm.input.waitUntilButtonPressed()
 
-    allcfs.land(targetHeight=0.02, duration=1.0+Z)
+    cf1.goTo(np.array(in1),0,5.0)
     timeHelper.sleep(3.0)
+    cf2.goTo(np.array(in2),0,5.0)
+    timeHelper.sleep(3.0)
+    cf3.goTo(np.array(in3),0,5.0)
+    timeHelper.sleep(3.0)
+    cf4.goTo(np.array(in4),0,5.0)
+    timeHelper.sleep(3.0)
+    cf5.goTo(np.array(in5),0,5.0)
+
+    print("press button to continue...")
+    swarm.input.waitUntilButtonPressed()
+
+    allcfs.land(targetHeight=0.02, duration=2.0+Z)
+    timeHelper.sleep(2.0)
 
     
+
