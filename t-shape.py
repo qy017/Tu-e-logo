@@ -4,6 +4,7 @@ from pycrazyswarm import Crazyswarm
 from numpy.linalg import norm
 
 Z=1.0
+V=3.0
 
 if __name__ == "__main__":
     swarm = Crazyswarm()
@@ -15,36 +16,34 @@ if __name__ == "__main__":
     cf4 = swarm.allcfs.crazyflies[3]
     cf5 = swarm.allcfs.crazyflies[4]
     
-    allcfs.takeoff(targetHeight=Z, duration=2.0)
+    allcfs.takeoff(targetHeight=0.2, duration=2.0)
     timeHelper.sleep(2.0)
 
     #horizontal T shape:
-    cf1.goTo(np.array([-0.5,0,0.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf2.goTo(np.array([0,0,0.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf3.goTo(np.array([0.5,0,0.5]),0,5.0)
+    cf1.goTo(np.array([-0.75,0.5,0.5]),0,V)
+    #timeHelper.sleep(2.0)
+    cf2.goTo(np.array([0,0.5,0.5]),0,V)
+    #timeHelper.sleep(2.0)
+    cf3.goTo(np.array([0.75,0.5,0.5]),0,V)
     timeHelper.sleep(3.0)
-    cf4.goTo(np.array([0,-0.5,0.5]),0,5.0)
+    cf4.goTo(np.array([0,-0.25,0.5]),0,V)
     timeHelper.sleep(3.0)
-    cf5.goTo(np.array([0,-1,0.5]),0,5.0)
+    cf5.goTo(np.array([0,-1,0.5]),0,V)
 
     print("press button to continue...")
     swarm.input.waitUntilButtonPressed()
 
     #stand up:
-    cf1.goTo(np.array([-0.5,0,1.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf2.goTo(np.array([0,0,1.5]),0,2.0)
-    timeHelper.sleep(2.0)
-    cf3.goTo(np.array([0.5,0,1.5]),0,5.0)
-    timeHelper.sleep(3.0)
-    cf4.goTo(np.array([0,-0.5,1]),0,5.0)
+    cf1.goTo(np.array([-0.75,0.5,1.5]),0,V)
+    cf2.goTo(np.array([0,0.5,1.5]),0,V)
+    cf3.goTo(np.array([0.75,0.5,1.5]),0,V)
+    cf4.goTo(np.array([0,-0.25,1]),0,V)
 
     print("press button to continue...")
     swarm.input.waitUntilButtonPressed()
 
-    allcfs.land(targetHeight=0.02, duration=1.0+Z)
+    allcfs.land(targetHeight=0.02, duration=2)
     timeHelper.sleep(3.0)
 
     
+
