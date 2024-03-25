@@ -3,7 +3,8 @@ from pycrazyswarm import *
 from pycrazyswarm import Crazyswarm
 from numpy.linalg import norm
 
-Z=1.0
+Z_takeoff=0.2
+Z_1 = 0.5
 
 if __name__ == "__main__":
     swarm = Crazyswarm()
@@ -16,19 +17,32 @@ if __name__ == "__main__":
     cf5 = swarm.allcfs.crazyflies[4]
     cf6 = swarm.allcfs.crazyflies[5]
 
-    allcfs.takeoff(targetHeight=Z, duration=2.0)
+    allcfs.takeoff(targetHeight=Z_takeoff, duration=2.0)
     
-    cf1.goTo(np.array([-0.5,0,1.5]),0,2.0)
+    # cf1.goTo(np.array([-0.5,0,1.5]),0,2.0)
+    # timeHelper.sleep(2.0)
+    # cf2.goTo(np.array([-0.5,0,1]),0,2.0)
+    # timeHelper.sleep(2.0)
+    # cf3.goTo(np.array([-0.2,0,0.5]),0,2.0)
+    # timeHelper.sleep(2.0)
+    # cf4.goTo(np.array([0.2,0,0.5]),0,2.0)
+    # timeHelper.sleep(2.0)
+    # cf5.goTo(np.array([0.5,0,1]),0,2.0)
+    # timeHelper.sleep(2.0)
+    # cf6.goTo(np.array([0.5,0,1.5]),0,2.0)
+    # timeHelper.sleep(2.0)
+
+    cf1.goTo(np.array([-0.75,0.75,Z_1]),0,2.0)
     timeHelper.sleep(2.0)
-    cf2.goTo(np.array([-0.5,0,1]),0,2.0)
+    cf2.goTo(np.array([-0.75,0,Z_1]),0,2.0)
     timeHelper.sleep(2.0)
-    cf3.goTo(np.array([-0.2,0,0.5]),0,2.0)
+    cf3.goTo(np.array([-0.3,-0.75,Z_1]),0,2.0)
     timeHelper.sleep(2.0)
-    cf4.goTo(np.array([0.2,0,0.5]),0,2.0)
+    cf4.goTo(np.array([0.3,-0.75,Z_1]),0,2.0)
     timeHelper.sleep(2.0)
-    cf5.goTo(np.array([0.5,0,1]),0,2.0)
+    cf5.goTo(np.array([0.75,0,Z_1]),0,2.0)
     timeHelper.sleep(2.0)
-    cf6.goTo(np.array([0.5,0,1.5]),0,2.0)
+    cf6.goTo(np.array([0.75,0.75,Z_1]),0,2.0)
     timeHelper.sleep(2.0)
 
     #pos = np.array(cf.initialPosition) + np.array([0, 0, Z])
