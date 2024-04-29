@@ -1,6 +1,5 @@
 import numpy as np
 from pycrazyswarm import *
-from pycrazyswarm import Crazyswarmhttps://www.desmos.com/3d/1fcgvz28wn
 from numpy.linalg import norm
 
 Z=1.0
@@ -21,20 +20,20 @@ if __name__ == "__main__":
     allcfs.takeoff(targetHeight=0.2, duration=2.0)
     timeHelper.sleep(2.0)
 
-    pause = 3.0
+    pause = 1.0
     #inclined T-shape:
     
-    cf1.goTo(np.array([-0.5,0,1.5]),0,V)
+    cf1.goTo(np.array([-0.7,0,2.0]),0,V)
     timeHelper.sleep(pause)
-    cf2.goTo(np.array([0,0,1.5]),0,V)
+    cf2.goTo(np.array([0,0,2.0]),0,V)
     timeHelper.sleep(pause)
-    cf3.goTo(np.array([0.5,0,1.5]),0,V)
+    cf3.goTo(np.array([0.7,0,2.0]),0,V)
     timeHelper.sleep(pause)
-    cf4.goTo(np.array([0,-0.2,1.1]),0,V)
+    cf4.goTo(np.array([0,-0.2,1.4]),0,V)
     timeHelper.sleep(pause)
-    cf5.goTo(np.array([0,-0.4,0.7]),0,V)
+    cf5.goTo(np.array([0,-0.4,0.8]),0,V)
     timeHelper.sleep(pause)
-    cf6.goTo(np.array([0,-0.6, 0.3]),0,V)
+    cf6.goTo(np.array([0,-0.6, 0.2]),0,V)
 
 
     print("press button to continue...")
@@ -42,17 +41,17 @@ if __name__ == "__main__":
     pause = 1.0;
 
     #inclined U-shape:
-    cf1.goTo(np.array([0.4,0,1]),0,V)
+    cf1.goTo(np.array([-0.7,0,2]),0,V)
     timeHelper.sleep(pause)
-    cf2.goTo(np.array([-0.4,0,1]),0,V)
+    cf2.goTo(np.array([-0.7,0,2]),0,V)
     timeHelper.sleep(pause)
-    cf3.goTo(np.array([0.4,-0.2,0.5]),0,V)
+    cf3.goTo(np.array([0.6,0,2]),0,V)
     timeHelper.sleep(pause)
-    cf4.goTo(np.array([-0.2,-0.4,0.1]),0,V)
+    cf4.goTo(np.array([0.6,-0.2,1]),0,V)
     timeHelper.sleep(pause)
-    cf5.goTo(np.array([-0.4,-0.2, 0.5]),0,V)
+    cf5.goTo(np.array([-0.3,-0.4,0.2]),0,V)
     timeHelper.sleep(pause)
-    cf6.goTo(np.array([0.2,-0.4,0.1]),0,V)
+    cf6.goTo(np.array([0.3,-0.4,0.2]),0,V)
     timeHelper.sleep(pause)
 
 
