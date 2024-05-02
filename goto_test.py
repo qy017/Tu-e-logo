@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     while True:
         current_pos = cf0.position()
-        if ((norm(np.array(current_pos)-np.array([0,0,0.5]),2)>0.01)):
+        if ((norm(np.array(current_pos)-np.array([0,0,0.5]),2)>0.05)):
             cf0.goTo(np.array([0,0,1]),0,V)
         else:
             cf0.goTo(np.array(current_pos),0,0)
