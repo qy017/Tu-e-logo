@@ -42,7 +42,7 @@ if __name__ == "__main__":
     pause = 1.0;
 
     #inclined U-shape:
-    cf1.goTo(np.array([-0.7,0,2]),0,V)
+    cf1.goTo(np.array([-0.7,0,1]),0,V)
     timeHelper.sleep(pause)
     cf2.goTo(np.array([-0.7,0,2]),0,V)
     timeHelper.sleep(pause)
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     timeHelper.sleep(pause)
     cf6.goTo(np.array([0,-0.2,1.05]),0,V)
     timeHelper.sleep(pause)
-    cf6.goTo(np.array([-0.55,-0.4,0.6]),0,V)
+    cf6.goTo(np.array([0,-0.6,0.4]),0,V)
     timeHelper.sleep(pause)
 
     print("press button to continue...")
