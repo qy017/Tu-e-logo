@@ -43,6 +43,7 @@ if __name__ == "__main__":
     for i in range(TRIALS):
 
         #T
+
         cf0.uploadTrajectory(0, 0, trajT1)
         cf1.uploadTrajectory(0, 0, trajT2)
         cf2.uploadTrajectory(0, 0, trajT3)
@@ -64,23 +65,41 @@ if __name__ == "__main__":
         cf5.goTo(initial_pos[5,:]+np.array([0,0,Z]), 0, 1.0)
         timeHelper.sleep(1.0)       
         allcfs.startTrajectory(0, timescale=TIMESCALE)
-        timeHelper.sleep(trajT1.duration * TIMESCALE + 1.5)
+        timeHelper.sleep(trajT1.duration * TIMESCALE + 1.0)
 
-        for cf in allcfs.crazyflies:
-            cf.uploadTrajectory(0,0,traj_wave)
-
-        cf0.startTrajectory(0, timescale=TIMESCALE*2, relative = True)
-        timeHelper.sleep(0.5)
-        cf1.startTrajectory(0, timescale=TIMESCALE*2, relative = True)
-        cf3.startTrajectory(0, timescale=TIMESCALE*2, relative = True)
-        cf4.startTrajectory(0, timescale=TIMESCALE*2, relative = True)
-        cf5.startTrajectory(0, timescale=TIMESCALE*2, relative = True)
-        timeHelper.sleep(0.5)
-        cf2.startTrajectory(0, timescale=TIMESCALE*2, relative = True)
-        timeHelper.sleep(0.5)
         
-       
-      
+        
+
+        # for cf in allcfs.crazyflies:
+        #     cf.uploadTrajectory(1,0,traj_wave)
+        # timeHelper.sleep(5.0)
+        cf0.goTo(pos_T[0,:]+np.array([0,0,Z]), 0, 1.0)
+        cf1.goTo(pos_T[1,:]+np.array([0,0,Z]), 0, 1.0)
+        cf2.goTo(pos_T[2,:]+np.array([0,0,Z]), 0, 1.0)
+        cf3.goTo(pos_T[3,:]+np.array([0,0,Z]), 0, 1.0)
+        cf4.goTo(pos_T[4,:]+np.array([0,0,Z]), 0, 1.0)
+        cf5.goTo(pos_T[5,:]+np.array([0,0,Z]), 0, 1.0)
+        timeHelper.sleep(1.0)
+
+        cf0.uploadTrajectory(1,0,traj_wave)
+        cf1.uploadTrajectory(1,0,traj_wave)
+        cf3.uploadTrajectory(1,0,traj_wave)
+        cf4.uploadTrajectory(1,0,traj_wave)
+        cf5.uploadTrajectory(1,0,traj_wave)
+        cf2.uploadTrajectory(1,0,traj_wave)
+        timeHelper.sleep(1.0)
+
+        cf0.startTrajectory(1, timescale=TIMESCALE * 2, relative = True)
+        timeHelper.sleep(0.5)
+        cf1.startTrajectory(1, timescale=TIMESCALE * 2, relative = True)
+        cf3.startTrajectory(1, timescale=TIMESCALE * 2, relative = True)
+        cf4.startTrajectory(1, timescale=TIMESCALE * 2, relative = True)
+        cf5.startTrajectory(1, timescale=TIMESCALE * 2, relative = True)
+        timeHelper.sleep(0.5)
+        cf2.startTrajectory(1, timescale=TIMESCALE * 2, relative = True)
+        timeHelper.sleep(0.5)   
+        # allcfs.startTrajectory(1, timescale=TIMESCALE*2,relative=True)
+        # timeHelper.sleep(traj_wave.duration * TIMESCALE + 1.0)
         
 
         print("press button to continue...")
